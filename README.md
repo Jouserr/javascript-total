@@ -3,7 +3,7 @@
 ## Curso de HTML, CSS Y Javascript
 
 ## Nombre del estudiante
-       Jouser Sebastian Araya Loaiza
+Jouser Sebastian Araya Loaiza
 
 ### Sección 10-2
 
