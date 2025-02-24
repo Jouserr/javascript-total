@@ -1,0 +1,15 @@
+div p{
+    color: bisque; 
+}
+
+ol > li{
+    font-weight: bolder;
+}
+
+h2 ~ h3{
+    background-color: crimson;
+}
+
+dic p{
+    background-color: cornflowerblue;
+}

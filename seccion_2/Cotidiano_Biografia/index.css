@@ -1,0 +1,26 @@
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(235, 247, 10);
+}
+
+body {
+    background-color: rgb(61, 59, 55);
+  }
+
+h3{
+    background-color: rgb(110, 92, 3);
+}
+
+#introduccion {
+    border: 2px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    position: absolute;
+    width: 70%;
+    margin-left: 21%;
+
+  }
+
+ 

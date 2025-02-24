@@ -1,0 +1,13 @@
+p{
+    text-align: center;
+}
+
+.normal{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.destacado{
+    background-color: burlywood;
+    padding: 20px;
+    font-family: sans-serif
+}

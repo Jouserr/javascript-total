@@ -1,0 +1,14 @@
+body{
+    background-color: blanchedalmond;
+}
+
+.principal{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#informacion{
+    text-align: center;
+    border-style; inset;
+}
+    
+a[href*=]

@@ -1,0 +1,15 @@
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: mediumblue;
+}
+
+p{
+    color: darkgoldenrod;
+    border: 1px;
+    border-style: solid;
+}
+
+
+#perros {
+    color: burlywood;
+}
