@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <title>Practica pokemon</title>
+    </body>
+
+    <head>
+        <body>
+            <img src="Pokemon/metaphod.png"
+            <input type="number" id="tiempoElegido">
+            <button onclick="comenzarTiempo()">cries</button>
+            <h1 id="textoAlarma" style="color: rgb(182, 6, 6);">APAGADO</h1>
+        
+            <audio id="audioAlarma" controls>
+                <source src="Sonidos/cries_pokemon_latest_11.ogg" type="audio/mpeg">
+                Sonido no habilitado
+            </audio>
+            
+            <script>
+                let elementoSegundos = document.getElementById("tiempoElegido");
+                let elementoTextoAlarma = document.getElementById("textoAlarma");
+                let elementoSonidoAlarma = document.getElementById("audioAlarma");
+        
+                function comenzarTiempo() {
+                    setTimeout(tiempoCumplido, 1000 * elementoSegundos.value);
+                }
+        
+                function tiempoCumplido() {
+                    elementoTextoAlarma.textContent = "ENCENDIDO";
+                    elementoTextoAlarma.style.color = "green";
+                    elementoSonidoAlarma.play();
+                }
+            </script>
+    </head>
+</html>
