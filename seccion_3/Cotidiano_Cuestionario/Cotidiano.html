@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Cotidiano Cuestionario</title>
+    <link rel="stylesheet" href="misEstilos.css">
+</head>
+
+<body onload="iniciarTemporizador()">
+    <h1 id="textoAlarma">00:30</h1>
+
+    <audio id="audioAlarma">
+        <source src="Audio/gameover.mp3" type="audio/mpeg">
+        Sonido no habilitado    
+    </audio>
+
+    <h1>Cuestionario</h1>
+
+    <pre>
+    <div class="pregunta">
+        <label>¿Cuándo empezó la Segunda Guerra Mundial?</label>
+        <input type="text" id="Pregunta1">
+    </div>
+
+    <div class="pregunta">
+        <label>¿Cuándo terminó la Segunda Guerra Mundial?</label>
+        <input type="text" id="Pregunta2">
+    </div>
+
+    <div class="pregunta">
+        <label>¿Cómo se llama el lugar donde los romanos hacían juegos con los gladiadores?</label>
+        <input type="text" id="Pregunta3">
+    </div>
+
+    <div class="pregunta">
+        <label>¿Cuándo fue el Día D? (Desembarco de Normandía)</label>
+        <input type="text" id="Pregunta4">
+    </div>
+
+    <div class="pregunta">
+        <label>¿Cuándo empezó la Primera Guerra Mundial?</label>
+        <input type="text" id="Pregunta5">
+    </div>
+     
+    <button onclick="FinDelJuego()">Finalice!</button>
+    <button onclick="ReiniciarPagina()">Volverlo a intentar.</button>
+    </pre>
+
+    <script>
+        tiempoRestante = 30;
+        elementoTextoAlarma = document.getElementById("textoAlarma");
+        elementoSonidoAlarma = document.getElementById("audioAlarma");
+
+        function iniciarTemporizador() {
+            setInterval(function() {
+                minutos = (tiempoRestante / 60) | 0;
+                segundos = tiempoRestante - (minutos * 60);
+                elementoTextoAlarma.textContent = String(minutos).padStart(2, "0") + ":" + String(segundos).padStart(2, "0");
+
+                if (tiempoRestante <= 0) {
+                    clearInterval(intervalo);
+                    elementoSonidoAlarma.play();
+                }
+
+                tiempoRestante--;
+            }, 1000);
+        }
+
+        function FinDelJuego() {
+        alert("1939\n1945\nEl Coliseo\n6 de junio de 1944\n1914");
+    }
+
+        function ReiniciarPagina() {
+            location.reload();
+        }
+
+        
+
+    </script>
+</body>
+</html>
