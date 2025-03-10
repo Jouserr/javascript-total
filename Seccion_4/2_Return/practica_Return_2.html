@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Return 2</title>
+</head>
+
+<body>
+    <p>
+        <button onclick="mostrarFecha()">Click aqui</button>
+    </p>
+    <script>
+        function mostrarFecha() {
+            let mostrarFecha = new Date
+            let year = mostrarFecha.getFullYear();
+            let month = mostrarFecha.getMonth() + 1;
+            let day = mostrarFecha.getDate();
+            let currentDate = day + "/" + month + "/" + year;
+            return currentDate
+            alert(mostrarFecha());
+        }
+
+    </script>
+</body>
+
+</html>
