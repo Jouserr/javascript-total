@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <title>Cotidiano Cuestionario</title>
     <link rel="stylesheet" href="misEstilos.css">
@@ -10,7 +11,7 @@
 
     <audio id="audioAlarma">
         <source src="Audio/gameover.mp3" type="audio/mpeg">
-        Sonido no habilitado    
+        Sonido no habilitado
     </audio>
 
     <h1>Cuestionario</h1>
@@ -49,32 +50,47 @@
         tiempoRestante = 30;
         elementoTextoAlarma = document.getElementById("textoAlarma");
         elementoSonidoAlarma = document.getElementById("audioAlarma");
+        let intervalo
 
         function iniciarTemporizador() {
-            setInterval(function() {
-                minutos = (tiempoRestante / 60) | 0;
-                segundos = tiempoRestante - (minutos * 60);
-                elementoTextoAlarma.textContent = String(minutos).padStart(2, "0") + ":" + String(segundos).padStart(2, "0");
+            intervalo = setInterval(contar, 1000);
+        }
 
-                if (tiempoRestante <= 0) {
-                    clearInterval(intervalo);
-                    elementoSonidoAlarma.play();
-                }
+        function contar() {
 
-                tiempoRestante--;
-            }, 1000);
+            minutos = (tiempoRestante / 60) | 0;
+            segundos = tiempoRestante - (minutos * 60);
+            elementoTextoAlarma.textContent = String(minutos).padStart(2, "0") + ":" + String(segundos).padStart(2, "0");
+
+            if (tiempoRestante <= 0) {
+                elementoSonidoAlarma.play();
+                clearInterval(intervalo);
+
+            }
+
+            tiempoRestante--;
+
         }
 
         function FinDelJuego() {
-        alert("1939\n1945\nEl Coliseo\n6 de junio de 1944\n1914");
-    }
+            let fechaHoy = Fecha()
+                alert("Respuestas correctas: \n1939\n1945\nEl Coliseo\n6 de junio de 1944\n1914\n" + fechaHoy);
+        }
 
         function ReiniciarPagina() {
             location.reload();
         }
 
-        
+        function Fecha() {
+            let fecha  = new Date();
+            let year = fecha.getFullYear();
+            let month = fecha.getMonth() + 1;
+            let day = fecha.getDate();
+            let currentDate = day + "/" + month + "/" + year;
+            return currentDate
+        }
 
     </script>
 </body>
+
 </html>
