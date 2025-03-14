@@ -1,0 +1,29 @@
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 1em;
+
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1em;
+
+}
+
+body {
+    background-color: aqua;
+
+}
+
+body {
+    background-color: blueviolet;
+}
+
+button {
+    color: antiquewhite;
+    background-color: bisque;
+    border-style: hidden;
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
