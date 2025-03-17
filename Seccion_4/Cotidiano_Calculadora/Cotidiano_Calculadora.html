@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="misEstilos.Css">
+</head>
+<body>
+    <h2>Calculadora</h2>
+    <div class="calculadora">
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <br>
+        <button onclick="sumar()">+</button>
+        <button onclick="restar()">-</button>
+        <button onclick="multiplicar()">X</button>
+        <button onclick="dividir()">/</button>
+        <br>
+        <button onclick="raiz()">raíz</button>
+        <button onclick="potencia()">potencia</button>
+        <br>
+        <button onclick="absoluto()">absoluto</button>
+        <button onclick="randomNum()">random</button>
+        <br>
+        <h3>Resultado:</h3>
+        <input type="text" id="resultado" readonly>
+        <br>
+        <button onclick="redondearRound()">round</button>
+        <button onclick="redondearFloor()">floor</button>
+        <button onclick="redondearCeil()">ceil</button>
+    </div>
+    <script>
+        function mostrarResultado(valor) {
+            document.getElementById("resultado").value = valor;
+        }
+       
+        function obtenerValores() {
+            let n1 = parseFloat(document.getElementById("num1").value) || 0;
+            let n2 = parseFloat(document.getElementById("num2").value) || 0;
+            return [n1, n2];
+        }
+       
+        function sumar() {
+            let valores = obtenerValores();
+            mostrarResultado(valores[0] + valores[1]);
+        }
+       
+        function restar() {
+            let valores = obtenerValores();
+            mostrarResultado(valores[0] - valores[1]);
+        }
+ 
+        function multiplicar() {
+            let valores = obtenerValores();
+            mostrarResultado(valores[0] * valores[1]);
+        }
+ 
+        function dividir() {
+            let valores = obtenerValores();
+            if (valores[1] !== 0) {
+                mostrarResultado(valores[0] / valores[1]);
+            } else {
+                mostrarResultado("Error");
+            }
+        }
+ 
+        function raiz() {
+            let valores = obtenerValores();
+            mostrarResultado(Math.sqrt(valores[0]));
+        }
+ 
+        function potencia() {
+            let valores = obtenerValores();
+            mostrarResultado(Math.pow(valores[0], valores[1]));
+        }
+ 
+        function absoluto() {
+            let valores = obtenerValores();
+            mostrarResultado(Math.abs(valores[0]));
+        }
+ 
+        function randomNum() {
+            mostrarResultado(Math.random());
+        }
+ 
+        function redondearRound() {
+            let valores = obtenerValores();
+            mostrarResultado(Math.round(valores[0]));
+        }
+ 
+        function redondearFloor() {
+            let valores = obtenerValores();
+            mostrarResultado(Math.floor(valores[0]));
+        }
+ 
+        function redondearCeil() {
+            let valores = obtenerValores();
+            mostrarResultado(Math.ceil(valores[0]));
+        }
+    </script>
+</body>
+</html>
