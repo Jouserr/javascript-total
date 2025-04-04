@@ -1,13 +1,26 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>practica if 1</title>
-    <script src="misScripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluar Parámetro</title>
+    <script>
+        function evaluarParametro() {
+            
+            var parametro = document.getElementById("parametro").value;
+ 
+       
+            if (parametro == 1) {
+                alert("Hola mundo");
+            }
+        }
+    </script>
 </head>
 <body>
-    <p> <h1><span style="color: rgb(71, 206, 71);">EVALUAR PARAMETRO </span></p></h1>
-        <input type="number" id="textoCantidad">
-        <button onclick="evaluarParametro(1)">Enviar</button>
-        <br/>
-        <h3 id="decision"></h3>
+    <h1>Evaluar parámetro</h1>
+    <input type="text" id="parametro" placeholder="Ingrese un valor">
+    <button onclick="evaluarParametro()">Enviar</button>
 </body>
 </html>
+ 
+ 

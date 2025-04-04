@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practica 2 do while</title>
+</head>
+
+<body>
+    <script>
+        let numero = parseInt(prompt("Escriba el número a multiplicar"));
+
+        function testLoop(numero) {
+            let x = 1;
+            const vueltas = 10; 
+            do {
+                console.log(numero * x);
+                x++;
+            } while (x <= vueltas); 
+        }
+
+        testLoop(numero); 
+    </script>
+</body>
+</html>
