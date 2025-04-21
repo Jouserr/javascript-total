@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title>Practica Etiquetas</title>
+</head>
+<body>
+    <script>
+        let miArray = [[2, 4 , 5], [3, 0 ,6], [3, 4, 7]];
+        function testLoop() {
+            outerLoop: 
+            for (let subArray of miArray) {
+                for (let numero of subArray) {
+                    if (numero === 0) {
+                        console.log("Número 0 encontrado.");
+                        break outerLoop; // 
+                    }
+                    console.log(numero);
+                }
+            }
+        }
+        testLoop();
+    </script>
+</body>
+</html>
