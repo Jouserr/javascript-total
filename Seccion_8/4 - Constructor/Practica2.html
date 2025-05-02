@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Practica2</title>
+</head>
+<body>
+    <script>
+        function Polo(marca, color, talle) {
+            this.marca = "";
+            this.color = "";
+            this.talle = "";
+            this.fabricar = function () {
+                console.log("Polo " + this.marca + " de color " + this.color + " y talle " + this.talle + " fabricado.");
+            };
+        }
+
+        let polo1 = new Polo();
+        let polo2 = new Polo();
+
+        polo1.fabricar();
+        polo2.fabricar();
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Practica this 1</title>
+</head>
+<body>
+    <script>
+                let automovil = {
+            marca: "Ford",
+            modelo: "Fiesta",
+            Anio: 2015,
+            arrancar() {console.log ("En marcha");
+             }, 
+            informacion() {
+                console.log("Marca: " + this.marca + ", Modelo: " + this.modelo);
+            }
+
+        };
+        automovil.informacion();
+    </script>
+</body>
+</html>

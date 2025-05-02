@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>Constructor</title>
+</head>
+<body>
+    <script>
+        function Automovil() {
+            this.marca = "";
+            this.modelo = "";
+            this.anio = "";
+            this.arrancar = function () {
+                console.log("El " + this.marca + " " + this.modelo + " está arrancando.");
+            };
+        }
+        let auto1 = new Automovil();
+        let auto2 = new Automovil();
+
+    </script>
+</body>
+</html>
