@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Practica1</title>
+</head>
+<body>
+    <script>
+        let automovil = new Object();
+        automovil.marca = "Ford";
+        automovil["Modelo"] = "Fiesta";
+        automovil.anio = 2015;
+        automovil.encender = function() {
+            alert("Coche encendido");
+        };
+
+        function mostrarInfo(obj) {
+            for (let propiedad in obj) {
+                console.log(`${propiedad}: ${obj[propiedad]}`);
+            }
+        }
+
+        mostrarInfo(automovil);
+    </script>
+</body>
+</html>

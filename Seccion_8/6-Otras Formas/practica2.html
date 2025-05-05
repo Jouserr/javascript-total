@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Practica 2</title>
+</head>
+<body>
+    <script>
+        let automovil1 = {
+            marca: "Ford",
+            Modelo: "Fiesta",
+            anio: 2015,
+            arrancar() {console.log("En marcha");}
+        };
+
+        let automovil2 = Object.create(automovil1);
+
+        console.log(automovil2);
+        console.log(automovil2.marca);
+        console.log(automovil2.Modelo);
+        console.log(automovil2.anio);
+        automovil2.arrancar(); 
+    </script>
+</body>
+</html>
