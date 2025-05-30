@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Practica 1</title>
+</head>
+<body>
+    <script>
+
+        function Restaurante(nombre, direccion, ciudad) {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.ciudad = ciudad;
+        }
+
+     
+        let restaurante1 = new Restaurante("Asados La pepa", "Guacima Arriba", "Alajuela");
+
+ 
+        let restaurante2 = Object.create(restaurante1);
+
+        console.log(restaurante1);
+        console.log(restaurante2);
+        console.log(restaurante2.nombre); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                        class ciudad{
+            constructor(nombre, Pais,){
+                this.nombre = nombre;
+                this.apellido = Pais;
+       
+            }
+        }
+
+        class Poblacion extends ciudad{
+            constructor(nombre, Pais, cantHabitantes){
+                super(nombre, Pais);
+                this._cantHabitantes = cantHabitantes;
+            }
+            get cantHabitantes(){
+                return this._cantHabitantes;
+            }
+
+            set cantHabitantes(nuevoHabitantes){
+                this._cantHabitantes = nuevoHabitantes;
+            }
+        }
+        console.log(ciudad.cantHabitantes);
+    </script>
+</body>
+</html>

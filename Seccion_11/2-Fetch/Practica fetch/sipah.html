@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <head>
+    <title>Jeison practica</title>
+  </head>
+  <body>
+    <div id="Titulo"></div>
+    <div id="Director"></div>
+    <div id="Lanzamiento"></div>
+    <div id="Duracion"></div>
+    <div id="Actores"></div>
+    <div id="PremioOscar"></div>
+    
+    <script>
+        let datosJson;
+
+        fetch('sipah1.json')
+        .then(res => res.json())
+        .then((salida) => {
+            datosJson = salida;
+
+            document.getElementById('Titulo').textContent = datosJson.Titulo;
+            document.getElementById('Director').textContent = datosJson.Director;
+            document.getElementById('Lanzamiento').textContent = datosJson.Lanzamiento;
+            document.getElementById('Duracion').textContent = datosJson.Duracion;
+            document.getElementById('Actores').textContent = datosJson.Actores;
+            document.getElementById('PremioOscar').textContent = datosJson.PremioOscar;
+
+            console.log(datosJson);
+        })
+    </script>
+  </body>S
+</html>

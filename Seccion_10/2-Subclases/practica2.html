@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Subclases</title>
+</head>
+<body>
+    <script>
+        class  Cirujano{
+            constructor(nombre, apellido){
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        }
+
+        class Medico extends Cirujano{
+            constructor(nombre, apellido, cantOperaciones){
+                super(nombre, apellido);
+                this.cantOperaciones = cantOperaciones;
+            }
+        }
+    </script>
+</body>
+</html>

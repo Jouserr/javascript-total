@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <head>
+    <title>Jeison practica</title>
+  </head>
+  <body>
+    <div id="Titulo"></div>
+    <div id="Director"></div>
+    <div id="Lanzamiento"></div>
+    <div id="Duracion"></div>
+    <div id="Actores"></div>
+    <div id="PremioOscar"></div>
+    
+    <script>
+        let xhr = new XMLHttpRequest();
+
+        xhr.open('GET', "datos1.json", true);
+        xhr.responseType = 'json';
+
+        xhr.onload = function() {
+            if(xhr.status === 200) {
+                let datosJson = xhr.response;
+
+                let elementoTitulo = document.getElementById("Titulo");
+                let elementoDirector = document.getElementById("Director");
+                let elementoLanzamiento = document.getElementById("Lanzamiento");
+                let elementoDuracion = document.getElementById("Duracion");
+                let elementoActores = document.getElementById("Actores");
+                let elementoPremioOscar = document.getElementById("PremioOscar");
+
+                elementoTitulo.textContent = datosJson.Titulo;
+                elementoDirector.textContent = datosJson.Director;
+                elementoLanzamiento.textContent = datosJson.Lanzamiento;
+                elementoDuracion.textContent = datosJson.Duracion;
+                elementoPremioOscar.textContent = datosJson.PremioOscar;
+
+                console.log(datosJson);
+            }
+        }
+
+        xhr.send();
+    </script>
+  </body>
+</html>

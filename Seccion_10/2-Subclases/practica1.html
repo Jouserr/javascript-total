@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Subclases</title>
+</head>
+<body>
+    <script>
+        class  Empleado{
+            constructor(nombre, apellido){
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        }
+
+        class Persona extends Empleado{
+            constructor(nombre, apellido, NumeroIdentificacion){
+                super(nombre, apellido);
+                this.NumeroIdentificacion = NumeroIdentificacion;
+            }
+        }
+    </script>
+</body>
+</html> 
