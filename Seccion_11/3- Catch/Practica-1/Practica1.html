@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON</title>
+  </head>
+  <body>
+    <div id="nombre"></div>
+    <script>
+        let datosJson;
+        fetch('ElSeniorDeLosAnillos.json')
+        .then(res => res.json())
+        .then((salida) => {
+          datosJson = salida;
+          let elementoTexto = document.getElementById('nombre');
+          elementoTexto.textContent = datosJson.nombre;
+
+          console.log(datosJson)
+        })
+
+
+        .catch(function(error) {
+          alert(error);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+ 
+    <title>Practica1</title>
+</head>
+<body>
+    <script>
+        function test(callback) {
+        setTimeout(function(){
+           console.log("te llego un mensaje:");
+           callback();
+        }, 2000);
+        }
+
+               function mensaje(){
+            console.log("Hola mundo");
+        }
+
+        console.log("llegas a tu casa");
+        test(mensaje);
+        console.log("Te vas a acostar");
+    </script>
+</body>
+</html>
