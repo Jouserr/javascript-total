@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Practica 1 promesas</title>
+</head>
+<body>
+    <script>
+        function test(){
+           return new Promise((resolve, reject) => {
+            let resultado = new XMLHttpRequest();
+            resultado.onload = function(){
+                if (resultado.status == 200){
+                     resolve(JSON.parse(resultado.responseText));
+                } else {
+                        reject(resultado.statusText);
+                    }
+            }
+            resultado.send
+           })
+        }
+ 
+           test()
+        .then(function(usuarios){
+            console.log(usuarios);
+        })
+        .catch(function(error) {
+            console.error(error);
+        })
+    </script>
+</body>
+</html>
