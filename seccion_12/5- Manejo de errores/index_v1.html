@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>index v1</title>
+</head>
+<body>
+    <script>
+        //callbacks
+        function sumarNumeros(a, b, callback) {
+            setTimeout(function(){
+                //para que sea asincronico
+                if (typeof a != 'number') {
+                    return callback(new Error('Algun argumento no es numero'));
+                }
+                callback(null, a+b);
+            }, 1000);
+        }
+
+        sumarNumeros('1', 2, function (error, resultado){
+            if (error){
+                console.error(error);
+            } else {
+                console.log(resultado);
+            }
+        });
+    </script>
+    
+</body>
+</html>
