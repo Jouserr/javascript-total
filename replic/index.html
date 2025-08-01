@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>CRUD con JSON Server</title>
+<style>
+
+      body {
+
+        font-family: Arial, sans-serif;
+
+        margin: 20px;
+
+      }
+
+      input,
+
+      button {
+
+        margin: 5px;
+
+        padding: 5px;
+
+      }
+
+      table,
+
+      th,
+
+      td {
+
+        border: 1px solid black;
+
+        border-collapse: collapse;
+
+        padding: 8px;
+
+      }
+</style>
+</head>
+<body>
+<h2>Gestión de productos</h2>
+<input type="text" id="nombre" placeholder="Nombre del producto" />
+<input type="number" id="precio" placeholder="Precio" />
+<button onclick="agregarProducto()">Agregar</button>
+ 
+    <h3>Lista de Productos</h3>
+<table id="tabla">
+<thead>
+<tr>
+<th>ID</th>
+<th>Nombre</th>
+<th>Precio</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody id="productos"></tbody>
+</table>
+ 
+    <script>
+
+      //const API_URL = window.location.origin + "/productos";
+
+      const API_URL =
+
+        "https://c7a5890d-b7a9-4057-ae36-cc74e0cf7e54-00-191mdf81pddgu.picard.replit.dev/productos";
+
+      console.log("Ver url: " + API_URL);
+ 
+      function cargarProductos() {
+
+        fetch(API_URL)
+
+          .then((res) => res.json())
+
+          .then((data) => {
+
+            const tbody = document.getElementById("productos");
+
+            tbody.innerHTML = "";
+
+            data.forEach((p) => {
+
+              tbody.innerHTML += `
+<tr>
+<td>${p.id}</td>
+<td><input value="${p.nombre}" id="nombre-${p.id}" /></td>
+<td><input type="number" value="${p.precio}" id="precio-${p.id}" /></td>
+<td>
+<button onclick="actualizarProducto(${p.id})">Actualizar</button>
+<button onclick="eliminarProducto(${p.id})">Eliminar</button>
+</td>
+</tr>
+
+                        `;
+
+            });
+
+          });
+
+      }
+ 
+      function agregarProducto() {
+
+        const nombre = document.getElementById("nombre").value;
+
+        const precio = parseFloat(document.getElementById("precio").value);
+ 
+        fetch(API_URL, {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type": "application/json",
+
+          },
+
+          body: JSON.stringify({ nombre, precio }),
+
+        }).then(() => {
+
+          document.getElementById("nombre").value = "";
+
+          document.getElementById("precio").value = "";
+
+          cargarProductos();
+
+        });
+
+      }
+ 
+      function actualizarProducto(id) {
+
+        const nombre = document.getElementById(`nombre-${id}`).value;
+
+        const precio = parseFloat(
+
+          document.getElementById(`precio-${id}`).value,
+
+        );
+ 
+        fetch(`${API_URL}/${id}`, {
+
+          method: "PUT",
+
+          headers: {
+
+            "Content-Type": "application/json",
+
+          },
+
+          body: JSON.stringify({ nombre, precio }),
+
+        }).then(cargarProductos);
+
+      }
+ 
+      function eliminarProducto(id) {
+
+        fetch(`${API_URL}/${id}`, {
+
+          method: "DELETE",
+
+        }).then(cargarProductos);
+
+      }
+ 
+      cargarProductos();
+</script>
+</body>
+</html>
+
+ 
