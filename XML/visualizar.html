@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizacion de Datos</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+ 
+<body>
+    <script>
+        function mostrarDatos(){
+            //Obtener el XML almacenado en el localStorage
+            const xmlData = localStorage.getItem("usuarioXML");
+            if (xmlData) {
+                // Parsear el XML
+                /*
+                DOMParser: Es uma clase nativa de Javascript.
+                Sirve para convertir un texto en formato
+                XML o HTML.
+                */
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+ 
+                //Extraer informacion
+                const nombre = xmlDoc.getElementsByTagName("nombre")[0].textContent;
+                const email = xmlDoc.getElementsByTagName("email")[0].textContent;
+                const anio = xmlDoc.getElementsByTagName("anio")[0].textContent;
+ 
+                //Mostrar la informacion en el HTML
+                document.getElementById("resultado").innerHTML = `
+                   <h2>Datos Recibidos</h2>
+                   <p><strong>Nombre:</strong> ${nombre}</p>
+                   <p><strong>Email:</strong> ${email}</p>
+                   <p><strong>Año:</strong> ${anio}</p>
+                `;
+            } else {
+                document.getElementById("resultado").innerHTML = `
+                   <h2>No se encontraron datos</h2>
+                `;
+            }
+        }
+    </script>
+</head>
+<body onload="mostrarDatos()">
+    <h1>Visualización de Datos del Formulario</h1>
+    <div id="resultado">
+    </div>
+    <a href="formulario.html">Volver al formulario</a>
+</body>
+</html>
+ 
